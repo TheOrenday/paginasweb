@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1> ONE PIECE </h1>
-    <button id="boton"></button>
+    <button id="boton">¡Zarpar!</button>
     <div class="equipo">
         <div class="personaje zoro">
             <h3 id="zoro">RORONOA ZORO: EL ESPADACHÍN MÁS FUERTE DEL MUNDO</h3>
@@ -15,12 +15,12 @@
             <p lang="en">RORONOA ZORO is Luffy's swordsman, his goal is to become the strongest swordsman and the first crew member.</p>
         </div>
         <div class="personaje sanji">
-            <h3>SANJI: EL COCINERO QUE BUSCA EL ALL BLUE</h3>
+            <h3 id="sanji">SANJI: EL COCINERO QUE BUSCA EL ALL BLUE</h3>
             <p>VINSMOKE SANJI es el cocinero de la tripulación de MONKEY D. LUFFY y su sueño es encontrar el All Blue.</p>
-            <p lang="en">VINSMOKE SANJI is the chef of Luffy's crew and his dream is to find all blue.</p>
+            <p lang="en">VINSMOKE SANJI is the chef of Luffy's crew and his dream is to find the All Blue.</p>
         </div>
         <div class="personaje nami">
-            <h3>NAMI: LA NAVEGANTE</h3>
+            <h3 id="nami">NAMI: LA NAVEGANTE</h3>
             <p>NAMI es la navegante de la tripulación de MONKEY D. LUFFY</p>
             <p lang="en">NAMI is the navigator of Luffy's crew</p>
         </div>
@@ -56,9 +56,43 @@
         console.log("Botón presionado");
     });
     const zoro = document.getElementById("zoro");
+    const textooriginal = zoro.textContent;
+    let cambiado = false;
     zoro.addEventListener("click", function () {
-        zoro.textContent = "¡Nada pasó aquí!";
-        console.log("Botón presionado");
+        if (cambiado) {
+            zoro.textContent = textooriginal;
+            cambiado = false;
+        } else {
+            zoro.textContent = "¡Nada pasó aquí!";
+            cambiado = true;
+        }
+        console.log("Zoro presionado");
+    });
+    const sanji = document.getElementById("sanji");
+    const textooriginalsanji = sanji.textContent;
+    let cambiadosanji = false;
+    sanji.addEventListener("click", function () {
+        if (cambiadosanji) {
+            sanji.textContent = textooriginalsanji;
+            cambiadosanji = false;
+        } else {
+            sanji.textContent = "¡Cisnito Nami!";
+            cambiadosanji = true;
+        }
+        console.log("Sanji presionado");
+    });
+    const nami = document.getElementById("nami");
+    const textooriginalnami = nami.textContent;
+    let cambiadonami = false;
+    nami.addEventListener("click", function () {
+        if (cambiadonami) {
+            nami.textContent = textooriginalnami;
+            cambiadonami = false;
+        } else {
+            nami.textContent = "¡Me debes $100,000 berries!";
+            cambiadonami = true;
+        }
+        console.log("Nami presionado");
     });
 </script>
 </body>
