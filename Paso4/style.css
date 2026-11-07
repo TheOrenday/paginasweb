@@ -1,0 +1,62 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: black; 
+    color: skyblue;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+h1 {
+    text-align: center;
+    color: gold;
+}
+h2 {
+    text-align: center;
+    color: gold;
+}
+h3 {
+    text-align: center;
+    color: orange;
+}
+.ingles {
+    color: aquamarine;
+}
+a {
+    color: beige;
+}
+.tarjeta {
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding: 20px;
+    border: 3px solid gold;
+    border-radius: 10px;
+    background-color: black;
+}
+ul {
+    border-left:  4px solid orange;
+    padding-left: 25px;
+}
+.equipo {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.personaje {
+    width: 250px;
+    padding: 20px;
+    border: 3px solid gold;
+    border-radius: 10px;
+    background-color: black;
+}
+.zoro {
+    border-color: green;
+}
+.sanji {
+    border-color: gold;
+}
+.nami {
+    border-color: orange;
+}

@@ -1,0 +1,20 @@
+body {
+    background-color: black; 
+    color: skyblue;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+h1 {
+    text-align: center;
+    color: gold;
+}
+h2 {
+    text-align: center;
+    color: orange;
+}
+.ingles {
+    color: aquamarine;
+}
+a {
+    color: beige;
+}
