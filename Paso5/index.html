@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+     <title> ONE PIECE: ¿UNA OBRA MAESTRA? </title> 
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1> ONE PIECE </h1>
+    <button id="boton"></button>
+    <div class="equipo">
+        <div class="personaje zoro">
+            <h3 id="zoro">RORONOA ZORO: EL ESPADACHÍN MÁS FUERTE DEL MUNDO</h3>
+            <p>RORONOA ZORO es la espada de MONKEY D. LUFFY, tiene como objetivo ser el espadachín más fuerte del mundo y el primer integrante de su tripulación.</p>
+            <p lang="en">RORONOA ZORO is Luffy's swordsman, his goal is to become the strongest swordsman and the first crew member.</p>
+        </div>
+        <div class="personaje sanji">
+            <h3>SANJI: EL COCINERO QUE BUSCA EL ALL BLUE</h3>
+            <p>VINSMOKE SANJI es el cocinero de la tripulación de MONKEY D. LUFFY y su sueño es encontrar el All Blue.</p>
+            <p lang="en">VINSMOKE SANJI is the chef of Luffy's crew and his dream is to find all blue.</p>
+        </div>
+        <div class="personaje nami">
+            <h3>NAMI: LA NAVEGANTE</h3>
+            <p>NAMI es la navegante de la tripulación de MONKEY D. LUFFY</p>
+            <p lang="en">NAMI is the navigator of Luffy's crew</p>
+        </div>
+    </div>
+    <div class="tarjeta">
+    <h2> LUFFY: EL HOMBRE QUE SE CONVERTIRÁ EN EL REY DE LOS PIRATAS </h2>
+    <p> 
+    MONKEY D. LUFFY es un pirata del east blue, con el objetivo de ser el pirata capaz de encontrar el one piece y
+    proclamarse el rey de los piratas y el hombre más libre del mundo.
+    </p>
+    <p class="ingles" lang="en">
+    MONKEY D. LUFFY is a pirate from the east blue, whose goal is to find the one piece and become the king of the pirates
+    and the freest man in the world.
+    </p>
+    <h3> 3 COSAS DE LUFFY </h3>
+    <ul> 
+        <li>No tiene miedo a morir, persigue su sueño aun sabiendo que puede morir.</li>
+        <li>Es muy gracioso.</li>
+        <li>Sus nakamas lo siguen y lo respetan.</li>
+    </ul>
+    <h3 lang="en">3 THINGS ABOUT LUFFY</h3>
+    <ul class="ingles" lang="en">
+        <li>He isn't afraid to die, he chases his dream even knowing the risk.</li>
+        <li>He is very funny.</li>
+        <li>His nakamas follow and respect him.</li>
+    </ul>
+    <a href="https://github.com/TheOrenday">MI GITHUB</a>
+    </div>
+<script>
+    const zarpar = document.getElementById("boton");
+    zarpar.addEventListener("click", function () {
+        zarpar.textContent = "¡Zarpamos!";
+        console.log("Botón presionado");
+    });
+    const zoro = document.getElementById("zoro");
+    zoro.addEventListener("click", function () {
+        zoro.textContent = "¡Nada pasó aquí!";
+        console.log("Botón presionado");
+    });
+</script>
+</body>
+</html>
