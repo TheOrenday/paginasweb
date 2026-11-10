@@ -60,6 +60,18 @@
             }
         }
 
+            const botonquitar = document.createElement("button")
+            botonquitar.textContent = "Quitar";
+            botonquitar.addEventListener("click", function () {
+                if (carrito.length === 0) {
+                    return;
+                }
+                const quitado = carrito.pop();
+                total = total - quitado.precio;
+                textoTotal.textContent = "Total:" + total;
+                mostrarticket()
+            })
+            document.body.appendChild(botonquitar);
     </script>
     </body>
 
