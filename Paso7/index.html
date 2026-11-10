@@ -28,9 +28,9 @@
             const boton = document.createElement("button");
             boton.textContent = "Agregar";
             boton.addEventListener("click", function (){
-                total = total+ p.precio;
+                total = total + p.precio;
                 textoTotal.textContent = "Total: $" + total;
-                carrito.push(p);
+                agregarItem(p);
                 mostrarticket();
             });
             li.appendChild(boton);
@@ -55,23 +55,41 @@
             listaticket.innerHTML = "";
             for (const item of carrito) {
                 const li = document.createElement("li");
-                li.textContent = item.nombre + " - $" + item.precio;
+                li.textContent = item.nombre + " x" + item.cantidad + " - $" + (item.precio * item.cantidad);
                 listaticket.appendChild(li);
             }
         }
-
-            const botonquitar = document.createElement("button")
-            botonquitar.textContent = "Quitar";
-            botonquitar.addEventListener("click", function () {
+        const botonQuitar = document.createElement("button");
+        botonQuitar.textContent = "Quitar";
+            botonQuitar.addEventListener("click", function () {
                 if (carrito.length === 0) {
-                    return;
-                }
-                const quitado = carrito.pop();
-                total = total - quitado.precio;
-                textoTotal.textContent = "Total:" + total;
-                mostrarticket()
-            })
-            document.body.appendChild(botonquitar);
+                return;
+             }
+                const ultimo = carrito[carrito.length - 1];
+                total = total - ultimo.precio;
+
+                    if (ultimo.cantidad > 1) {
+                     ultimo.cantidad = ultimo.cantidad - 1;
+             } else {
+                    carrito.pop();
+            }
+
+    textoTotal.textContent = "Total: $" + total;
+    mostrarticket();
+});
+            document.body.appendChild(botonQuitar);
+
+            function agregarItem(producto) {
+    const existente = carrito.find(function (x) {
+        return x.nombre === producto.nombre;
+    });
+
+    if (existente) {
+        existente.cantidad = existente.cantidad + 1;
+    } else {
+        carrito.push({ nombre: producto.nombre, precio: producto.precio, cantidad: 1 });
+    }
+}
     </script>
     </body>
 
