@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>ONE PIECE STORE</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>ONE PIECE STORE</h1>
+        <ul id="catalogo"></ul>
+        <p id="total">Total: $0</p>
+    <script>
+        const productos = [
+            { nombre: "Sombrero de paja", precio: 500},
+            { nombre: "Climatak", precio: 350},
+            { nombre: "Resortera", precio: 100},
+        ];
+        let total = 0;
+        const catalogo = document.getElementById("catalogo");
+        const textoTotal = document.getElementById("total");
+
+        for (const p of productos) {
+            const li = document.createElement("li");
+            li.textContent = p.nombre + " - $" + p.precio + " ";
+
+            const boton = document.createElement("button");
+            boton.textContent = "Agregar";
+            boton.addEventListener("click", function (){
+                total = total+ p.precio;
+                textoTotal.textContent = "Total: $" + total;
+            });
+            li.appendChild(boton);
+            catalogo.appendChild(li);
+        }
+        const botoncobrar = document.createElement("button");
+        botoncobrar.textContent = "Cobrar";
+        botoncobrar.addEventListener("click", function(){
+            if (total === 0){
+                return;
+            }
+            textoTotal.textContent = "Cobrado: $" + total;
+            total = 0;
+        })
+        document.body.appendChild(botoncobrar);
+
+    </script>
+    </body>
+
+</html>
