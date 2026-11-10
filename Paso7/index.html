@@ -9,6 +9,7 @@
         <h1>ONE PIECE STORE</h1>
         <ul id="catalogo"></ul>
         <p id="total">Total: $0</p>
+        <ul id="ticket"></ul>
     <script>
         const productos = [
             { nombre: "Sombrero de paja", precio: 500},
@@ -16,6 +17,7 @@
             { nombre: "Resortera", precio: 100},
         ];
         let total = 0;
+        let carrito = [];
         const catalogo = document.getElementById("catalogo");
         const textoTotal = document.getElementById("total");
 
@@ -28,6 +30,8 @@
             boton.addEventListener("click", function (){
                 total = total+ p.precio;
                 textoTotal.textContent = "Total: $" + total;
+                carrito.push(p);
+                mostrarticket();
             });
             li.appendChild(boton);
             catalogo.appendChild(li);
@@ -40,8 +44,21 @@
             }
             textoTotal.textContent = "Cobrado: $" + total;
             total = 0;
+            carrito = [];
+            mostrarticket();
         })
         document.body.appendChild(botoncobrar);
+
+        
+        function mostrarticket() {
+            const listaticket = document.getElementById("ticket")
+            listaticket.innerHTML = "";
+            for (const item of carrito) {
+                const li = document.createElement("li");
+                li.textContent = item.nombre + " - $" + item.precio;
+                listaticket.appendChild(li);
+            }
+        }
 
     </script>
     </body>
